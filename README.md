@@ -19,8 +19,8 @@ The approach of solving this is to compare every interval in the input set with 
 Questions: 
 - What is the runtime of the program?
   
-  Since two nested for loops are used to interate over every element and compare
-  it to every other element the runtime of the program can be estimated by O(N^2).
+  Since two nested for loops are used to interate over every interval and compare
+  it to every other interval the runtime of the program can be estimated by O(N^2).
 
 - How can the robustness be ensured especially with regards to very large input sets?
 
