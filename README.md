@@ -7,15 +7,14 @@ It is assumed that the order of the intervals in the result set is irrelevant.
 Example:
  Input: [25,30] [2,19] [14,23] [4,8] -> Output [2,23] [25,30]
 
-The approach of solving this is to compare every element with each other and check for three cases:
-1. The interval is a subinterval of some other interval. In this case the minor interval can be discarded
+The approach of solving this is to compare every element in the input set with each other and check for three cases:
+1. The current interval is a subinterval of some other compared interval. In this case the current interval can be discarded from the set.
    Example:  [4,8] is in the range of [14,23], so [4,8] can be discarded.
 
-2. The intervals boundaries overlap with some other intervals boundaries. In this case the lowest and the highest boundaries are used to create a new interval. 
+2. The current intervals boundaries overlap with some other compared intervals boundaries. In this case the lowest and the highest boundaries are used to update the compared intervals boundaries and the current interval is discarded from the set.
    Example: [2,19] [14,23] - > [2,23]
 
-3. The interval is neither a subinterval of some other interval nor overlaps with some other interval. 
-   The interval is simply added to the result set.
+3. The current interval is neither a subinterval of some other compared interval nor overlaps with some other compared interval. The current interval simply remains in the set.
 
 Questions: 
 - What is the runtime of the program?
