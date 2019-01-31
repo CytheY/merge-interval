@@ -186,7 +186,7 @@ int main()
     testMerge(intervalList, std::vector<Interval>{Interval(1,5)}, verbose);
 
     intervalList.clear();
-    intervalList.push_back(Interval(3,30));  // result should be [1:2]
+    intervalList.push_back(Interval(3,30));  // result should be [1:2] [3,40]
     intervalList.push_back(Interval(10,20));
     intervalList.push_back(Interval(3,30));
     intervalList.push_back(Interval(1,2));
