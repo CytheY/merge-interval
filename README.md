@@ -7,7 +7,7 @@ It is assumed that the order of the intervals in the result set is irrelevant.
 Example:
  Input: [25,30] [2,19] [14,23] [4,8] -> Output [2,23] [25,30]
 
-The approach of solving this is to compare every element in the input set with each other and check for three cases:
+The approach of solving this is to compare every interval in the input set with each other and check for three cases:
 1. The current interval is a subinterval of some other compared interval. In this case the current interval can be discarded from the set.
    Example:  [4,8] is in the range of [14,23], so [4,8] can be discarded.
 
