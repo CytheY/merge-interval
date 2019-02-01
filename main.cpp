@@ -74,13 +74,11 @@ std::vector<Interval> merge(std::vector<Interval> list)
                 break;
             }
 
-            if(compInterval.min <= currentInterval.max && currentInterval.max <= compInterval.max
-                && currentInterval.min < compInterval.min)
+            if(compInterval.min <= currentInterval.max && currentInterval.max <= compInterval.max)
             {
                 // Overlaps with some other interval.
-                // Update the compared interval
+                // Update the compared interval with current intervals minimum
                 (*iter).min = currentInterval.min;
-                (*iter).max = compInterval.max;
                 
                 // Delete currently visited interval
                 list.erase(it);
@@ -192,6 +190,11 @@ int main()
     intervalList.push_back(Interval(1,2));
     intervalList.push_back(Interval(27,40));
     testMerge(intervalList, std::vector<Interval>{Interval(1,2), Interval(3,40)}, verbose);
+
+    intervalList.clear();
+    intervalList.push_back(Interval(2,30));  // result should be [2:33]
+    intervalList.push_back(Interval(2,33));
+    testMerge(intervalList, std::vector<Interval>{Interval(2,33)}, verbose);
 
     intervalList.clear();
     intervalList.push_back(Interval(3,30));  // result should be [3:30]
